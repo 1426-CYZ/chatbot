@@ -31,7 +31,7 @@ def call_zhipu_api(messages, model="glm-4-flash"):
 MEMORY_FOLDER = "4.2_memory_clonebot"
 
 # 【修改1：更新角色-记忆文件映射】
-# 新增“洪梽炫”角色对应的记忆文件
+# 新增“任小妹”角色对应的记忆文件
 ROLE_MEMORY_MAP = {
    
      "任小妹": "rzm_memory.json" # 新增：对应聊天记录的记忆文件
@@ -79,7 +79,7 @@ def roles(role_name):
     
     # ========== 第二步：获取基础人格设定 ==========
     role_personality = {
-     # 【修改2：新增“洪梽炫”的人格设定】
+     # 【修改2：新增“任小妹”的人格设定】
          
         "任小妹": """
         【人格特征】
@@ -131,7 +131,7 @@ def roles(role_name):
     return role_system
 
 # 【角色选择】
-# 【修改3：选择“洪梽炫”角色】
+# 【修改3：选择“任小妹”角色】
 role_system = roles("任小妹")
 
 # 【结束对话规则】
@@ -162,7 +162,7 @@ st.set_page_config(
 if "conversation_history" not in st.session_state:
     st.session_state.conversation_history = []
 if "selected_role" not in st.session_state:
-    st.session_state.selected_role = "人质"
+    st.session_state.selected_role = "任小妹"
 if "initialized" not in st.session_state:
     st.session_state.initialized = False
 
@@ -177,8 +177,8 @@ with st.sidebar:
     # 角色选择
     selected_role = st.selectbox(
         "选择角色",
-        ["小丑", "人质"],
-        index=0 if st.session_state.selected_role == "小丑" else 1
+        ["任小妹", "1426"],
+        index=0 if st.session_state.selected_role == "1426" else 1
     )
     
     # 如果角色改变，重新初始化对话
