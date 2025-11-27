@@ -41,6 +41,55 @@ ROLE_MEMORY_MAP = {
 
 # ========== 主程序 ==========
 
+def get_portrait():
+    """返回角色头像的ASCII艺术"""
+    return """
+00KKKKKKKKKKKKKKKXXXXXXXXXXXXXXXXXXXXXNNNNNNNNNXXKXXNNNNNNNNXkooolodddxdldk0K0OOkkkdlclcc::::;;;;;;;
+000KKKKKKKKXXXXXXXXXXXXXXXXXXXXXXNXXNNXXNXNNNNKkx0XNNNXOxkO0OdllllllllllodO0XXNNXOOOxollcccc:::;;;;,
+KKKKKKKKKKXXXXXXXXXNNNNNNNNNNNNNNNNNNNXXXXNNNXkodKNNNXkllllllcccccccclllodxk0NWWNKOkdlllllcc:::;;;;;
+XXKKXXXXXXXXXXXXXXXNNNNNNNNNNNNNNNNNNKOkkkO00kxook00kdollllcc::c::cccclloxO0KNX0OOxdollllcccc:::::::
+XXXXXXXXXXXXXXNNXXXNNNNNNXNNNNNNNNNNNXXXK0OOOxdddollllcccccccccccccccclloxxxk0XKkdoollcccccc:::::;;;
+NNNXXXNNNNNNNNNNNNNNNNNNNNXXXXXXXNNNXNNNNNNNNXKK0kxdlcccccccccccccc:cccclcclldO0xooolcc::::::::::;;;
+KXXOxk0KKXNNNXXK00KXXXKKXXXKKK0OOO0OOkkkkO0KNNNXKK0Odlcc:::cccccccc::::ccccclodollllccc::::::::;;;;,
+kO0OxxxxOKXXXKK0000KK0OkkO0K00KK0kxxdoodddxOKNWNX00kollcccc::ccccccc::::cccccccccccc:::::::::::::::c
+ddxkkkxxkO00000KX0kxkO00OkOOOkkOOOkkOOkkO0KKXNNNNNN0dlcccccc::ccccc::::::::::ccc::c:::::::::::::::cc
+dddxxxxxxxxxxxkk0K0kxdxxxkkkOkxddxxxkkO0000OkkkOKXX0kollccc::::::::::::::::::::c::::::ccccccccccccll
+xxxdxxxdddxxxkkkOOOOOkxxxxxxxxxdooddddddxxxxdxxO00OOOxdoolllcccccccccccccccclllccccccccllllodxxOOkkk
+O0OO00OOOOOOO000000000000000000000OOOkkkkOO00OOOkkkkkOkxxddddoooooodddddddddxxkkkxdddddxxxk0XXKXXK0O
+doodoxOOxxO00000000OkollldkO00000KKKKKK0KKKKKKKKKKKKK00OOOOO00O0000KKKKKKKKKXXXXK0OOOOOkkkkOK00000OO
+';:;,,;,,,cooloxxkkxc,''',:cllllloxkkkOOOOOOO0OOOOOOOOOkOOOOOOO0000000000000000OkOOOOOOkkkkO00OO0OOO
+...','.....'..'',;cc;'',,,,,,;;:;,;cllloddxkxxxxxddddoooolllllllllllllllllccc::;;;;,,,,,,,,''''
+............''''',::;,,;;;;,,,,,,';clllccldxkkkkkkkxxxddddooooooooooddddddoolc::;;;,,,,,,,,,,''
+,,,;;;;;;;:cllodddl:,,,,,,'''',,';::cc,';:clccdkkkkkkkkkxxxddddoooooooddddxxxddolcc::;;;,,,,,,,,,,''
+odddddxxkkOOO000Oo;,,,'''......''';::;..''';,..okOOkkkkkkxxxddddoooooooodddxxxdoolcc:::;;;,,,,,,,,,,
+xxkkkOOO00000Odol:,''............',;;;.. ...',.,xOOOkkkkkxxxddddoooooooodddxxxdoolcc:::;;;,,,,,,,,,,
+kkOOOO00000Oxl:,;c:;;;;;,,'........',;;,'.....;;cxOOkkOkkkxxxxddddoddoooodddddddolcc::;;;;;,,,,,,,,,
+kkkOOO00Oxc,'',:c::;;,,;;;,........',,,,,,,;:c;oOOOOOOkkkkxxxxddodddddddddxxxxddolcc::;;;;;,,,,,,,,,,
+xxxxkkOko;',;::;,,,,,,,,,,,,'.......',,,;;:::;;d00OO0OOOkkkxxxdddddddddddddddddoolc:::;;;,,,,,,,,,,,
+kkkkkko:',:;'.........................'''',,,;lxkkkkkkkkxxxxdddddddddddxxxxxxxdollc:::;;;,,,,,,,,,,,
+OOOOOo,';:;''....... ...    .'............',,cxOOkkkkkxxddddddoooooooddddxxkkkxdolllc::;;;;;;;;;,,,,
+kkxxo,':;''''''.............'...........''';oOKK0OOOOOkkkkxxxddoooooollccclllllllcccc::;;;;;;;;;;;,,
+xxxo,,:;,,,,,'''''.....................',;lk0KKKK00OOkkkkxxxxddddoodddddxxxxxddooodolccc:;;;;;;;,,,,
+OOd,':;'',,,,,,,,''''..................',:dO000000OOOkkkkkxxxxdddddddddddddxxdoll::;;::;;;;;;;,,,,,,
+OOc.;;,,,,,,;;,,,'''......       .....'';:ldOOO00OOOOkxxkxxxddddddddddddddddolclllc::::;;;;;;;,,,,,,
+ko,';,,,,;;,;,,'''..';l:.        ......';:ldkOOOOOOkkkxxxxxddddoodddddxxxxxddooodolccc:;;;;;;;,,,,,,
+o:.,;,,,,;,,;,.',;codkd,...............'',:oxxxxxxxxxxxxdddddddooooooodddddddooolcccllc::;;;;;;;,,,,
+,..,,',,,',clllodxkOkd;''..............',,;:lddddxxxxxxddddddddoooddooooolooooolc:ccccc:;;;;;;;;,,,,
+'...'''''':ooolclooxxc................'''',;:oxxxxxxdddddddoooooodddddddooodoolllcc::ccc:;;:;;;;,,,,
+''..''....''''.'',;c:'. ........... ...'''',,;clddddddddoc;;:llllllloodddddddddolcllcccc:::;;;;,,,,,,
+'''.....'''''.....,:;...................',,',;;;cdxxkkkkxoccooooolclclllllcloddoolccllc::::;;;;;;,,''
+c:;;,,''''.'''''',;;,.'''..'''''....'.......',,,;ldxkxxkxxkxxxddddddooooolccccloodolllcccc:;;;;;;,,,,
+llccccc::;;,,'''';:,','..''..'''''.';;,.....'''',:cllcoolldxkxxxdoodxxddxxdoc;;:cllllooodxxocc::;;;;
+lcc::cccccccc::;;c:'....'''...'''''';::;'....'',';:;.....';:coddccoddoooodxdollolcccll:;:loxxxxddool
+lllccccccccccccccc,....''...''''''',;:cc:,'....'',;'.       ..,,''';;,;cllddxddddollooccccloc:cloddd
+ooolllccllcccccclc,....''.'''''''',,;;cccc:;'......';::;;'.... ...  ...'cooodollloddolllllollcclllll
+lllllllcclcccllloc,',,,,''''''''..',;;:ccccc:,.'..,;:;,;:c;...........  .,:c:....,;cloooolllollllllo
+lllllllllllllllllc;,,'''.....'''''',;;;:ccllc,,,'',,'.''',::,.''.''....... ..      .,clcll::clccllll
+ooooooollllcccc:;;;,''..........''..,;;;::::,',,'...'.....';,.';;,'',,'..............,,',:..,c:,,,,,
+lllllcccccccc::;;;;'..........'''....',,,,;;,,'.'...'.....',;'';;;,,;;,'.''''...'''''.'......'...   
+c::ccccccccc:;;;::,............''',''..''''','..,'.........,;::;;'.... ...  ...'cooodollloddolllllol
+"""
+
 def roles(role_name):
     """
     角色系统：整合人格设定和记忆加载
