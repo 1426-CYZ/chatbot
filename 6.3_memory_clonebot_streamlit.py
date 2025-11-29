@@ -41,8 +41,8 @@ MEMORY_FOLDER = "4.2_memory_clonebot"
 
 # 角色名到记忆文件名的映射
 ROLE_MEMORY_MAP = {
-    "任小妹: rzm_memory.json",
-    "1426: rzm_memory.json",
+    "任小妹": "rzm_memory.json",
+    "1426": "rzm_memory.json",
 }
 
 # ========== 初始记忆系统 ==========
@@ -223,7 +223,7 @@ st.set_page_config(
 if "conversation_history" not in st.session_state:
     st.session_state.conversation_history = []
 if "selected_role" not in st.session_state:
-    st.session_state.selected_role = "任小妹"
+    st.session_state.selected_role = "任小妹""1426"
 if "initialized" not in st.session_state:
     st.session_state.initialized = False
 
@@ -239,7 +239,7 @@ with st.sidebar:
     selected_role = st.selectbox(
         "选择角色",
         ["任小妹", "1426"],
-        index=0 if st.session_state.selected_role == "1426" else 1
+        index=0 if st.session_state.selected_role == "任小妹""1426" else 1
     )
     
     # 如果角色改变，重新初始化对话
