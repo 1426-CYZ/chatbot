@@ -42,7 +42,7 @@ MEMORY_FOLDER = "4.2_memory_clonebot"
 # 角色名到记忆文件名的映射
 ROLE_MEMORY_MAP = {
     "任小妹: rzm_memory.json",
-   
+    "1426: rzm_memory.json",
 }
 
 # ========== 初始记忆系统 ==========
